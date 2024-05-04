@@ -13,5 +13,13 @@ const signInWithOtp = async () => {
 }
 </script>
 <template>
-  <NuxtPage/>
+  <div>
+    <button @click="signInWithOtp">
+      Sign In with E-Mail
+    </button>
+    <input
+      v-model="email"
+      type="email"
+    />
+  </div>
 </template>
