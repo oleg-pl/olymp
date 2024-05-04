@@ -1,9 +1,10 @@
 <script setup>
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
+const router = useRouter()
 async function signOut() {
   const { error } = await supabase.auth.signOut();
-  console.log(error);
+  router.push('/login');
 }
 
 </script>
