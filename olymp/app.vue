@@ -6,7 +6,6 @@ async function signOut() {
   const { error } = await supabase.auth.signOut();
   router.push('/login');
 }
-
 </script>
 <template>
   <div v-if="user">
