@@ -1,5 +1,5 @@
 <script setup>
-const isSignUp = ref(true);
+const isSignUp = ref(true); // Ставить статус для цієї сторінки, що Юзер завжди  зареєстрований і може на неї потрапити за будь якої умови
 </script>
 <template>
     <div>
@@ -13,7 +13,7 @@ const isSignUp = ref(true);
     </div>
 
     <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32"> 
-      <SignUp v-if="isSignUp" />
+      <SignUp v-if="isSignUp" />  <!--Перевіряє чи зареєстрований користувач-->
       <SignIn v-else />
       <div class="text-center pt-12 pb-12">
       <button @click="isSignUp = !isSignUp">

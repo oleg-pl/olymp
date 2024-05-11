@@ -6,8 +6,8 @@ const supabase = useSupabaseClient()
     const password = ref("");
     const router = useRouter();
     const data = reactive({
-    surname: '',
-    name: '',
+    surname: '', // Пуста змінна в яку записується значення ПАРОЛЮ
+    name: '', // Пуста змінна в яку записується значення ІМЕНІ
     user_id: 0,
     role: 1
 })
@@ -22,13 +22,13 @@ const supabase = useSupabaseClient()
     {
         throw error;
     }  else {
-      const user = useSupabaseUser()
-      data.user_id = user.value.id ;
-      await $fetch('/api/users', {
-        method: 'post',
-        body: data
+      const user = useSupabaseUser() // Створюється ЮЗЕР
+      data.user_id = user.value.id ; // ЙОМУ ПРИСВОЮЄТЬСЯ УНІКАЛЬНЕ ID
+      await $fetch('/api/users', { // Звертаюсь до таблиці users в supabase
+        method: 'post', // Методом POST Вношу дані в таблиці users
+        body: data // Ці всі дані записуються у змінну data
     })
-        router.push('/')
+        router.push('/') // Після реєстрації закидує на наступну сторінку
     }
       } catch (error) {
         alert(error.error_description || error.message);
@@ -47,6 +47,7 @@ const supabase = useSupabaseClient()
 
                 <div class="flex flex-col pt-4">
                     <label for="email" class="text-lg">Email</label>
+                    <!--ДУЖЕ ВАЖЛИВО v-model - це тег який записує або збирає дані які були записані в input до змінної , тобто на пряму підключає змінну до тегу html-->
                     <input v-model="email" type="email" id="email" placeholder="your@email.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
 

@@ -1,28 +1,8 @@
+<script setup>
+  const {data} = useFetch('/api/subjects') /*Отримав дані з промісу (таблиці subjects)*/
+</script>
 <template>
-    <header class="header" id="header">
-   <nav class="navbar container">
-      <a href="#" class="brand"><img src="public/logo2.png" alt=""></a>
-      <div class="search">
-         <form class="search-form">
-            <input type="text" name="search" class="search-input" placeholder="Search for Destinations" autofocus>
-            <button type="submit" class="search-submit" disabled><i class="bx bx-search"></i></button>
-         </form>
-      </div>
-      <div class="menu" id="menu">
-         <ul class="menu-inner">
-            <li class="menu-item"><a href="#" class="menu-link">Listing</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Feature</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Popular</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Support</a></li>
-         </ul>
-      </div>
-      <div class="burger" id="burger">
-         <span class="burger-line"></span>
-         <span class="burger-line"></span>
-         <span class="burger-line"></span>
-      </div>
-   </nav>
-</header>
+    
     <article>
     <div class="container">
   
@@ -48,10 +28,7 @@
          </div>
 
           <div class="subjects">
-          <h5>Математика</h5>
-          <h5>Математика</h5>
-          <h5>Математика</h5>
-          <h5>Математика</h5>
+          <h5 v-for="subject in data">{{subject.name}}</h5>
         </div>
 
 

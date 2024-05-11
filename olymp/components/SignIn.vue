@@ -1,19 +1,19 @@
 <script setup>
 const supabase = useSupabaseClient()
-const email = ref("");
-const password = ref("");
+const email = ref(""); // Пуста змінна яка записує дані ЕМЕЙЛУ і передає на supabase
+const password = ref(""); // Пуста змінна яка записує дані ПАРОЛЮ і передає на supabase
 const router = useRouter()
 const handleSignin = async () => {
   try {
     const { error } = await supabase.auth.signInWithPassword({
-      email: email.value,
-      password: password.value,
+      email: email.value, // Записує значення введеного ЕМЕЙЛУ в змінну email
+      password: password.value, // Записує значення введеного ПАРОЛЮ в змінну password
     });
-    if (error) 
+    if (error) // Якщо дані не співпадають з існуючими в supabase то виб'є помилку
     {
         throw error;
     }  else {
-        router.push('/')
+        router.push('/') // Якщо дані співпали то юзера перекине на наступну сторінку
     }
        
   } catch (error) {
