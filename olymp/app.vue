@@ -7,39 +7,48 @@ async function signOut() { /* Це функція виходу з авториз
   router.push('/login');  // Функція виходу до початковою сторінки реєстраці login
 }
 </script>
+
+
+<div>
+   
+ </div>
+
+
+
 <template>
  <!--ДУЖЕ ВАЖЛИВО !!! v-if = "user" - це тег який обмежує цей блок тільки якщо Юзер вже зареєстрований, тобто цей блок буде відображатися тільки коли юзер пройшов реєстрацію і дійсно існує, і тільки при цій умові йому з'явиться цей блок --> 
- <header v-if="user"  class="header" id="header">
-   <nav class="navbar container">
-      <a href="#" class="brand"><img src="public/logo2.png" alt=""></a>
-      <div class="search">
-         <form class="search-form">
-            <input type="text" name="search" class="search-input" placeholder="Search for Destinations" autofocus>
-            <button type="submit" class="search-submit" disabled><i class="bx bx-search"></i></button>
-         </form>
-      </div>
-      <div class="menu" id="menu">
-         <ul class="menu-inner">
-            <li class="menu-item"><a href="#" class="menu-link">Listing</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Feature</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Popular</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Support</a></li>
-         </ul>
-      </div>
-      <div class="burger" id="burger">
-         <span class="burger-line"></span>
-         <span class="burger-line"></span>
-         <span class="burger-line"></span>
-      </div>
-   </nav>
-   <div>
-    <button @click="signOut">Sign Out</button>
-  </div>
-</header>
- 
+ <div v-if="user" id="header" class="l-header">
+            <div class="wrap">
+               
+                <header class="logo">
+                    <h1 class="logo__title">
+                     <img class="logo" src="public/logo2.png" alt="">
+                    </h1>
+                </header>
+                <button class="singout" @click="signOut">Sign Out</button>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Головна</a>
+                        </li><li class="menu__item">
+                            <a href="#" class="menu__link">Інформація</a>
+                        </li>
+                        <li class="menu__item">
+                            <NuxtLink href="/student.vue" class="menu__link">Панель управління УЧНЯ</NuxtLink>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            
+        </div>
+        
   <NuxtPage/>
   
 </template>
+
+
+
 
 
 
@@ -53,6 +62,19 @@ async function signOut() { /* Це функція виходу з авториз
   margin-top: 60px;
 }
 
+@media (max-width: 850px) {
+  .logo {
+    float: none;
+  }
+  .row{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu{
+   display: none;
+  }
+}
 
 
 </style>

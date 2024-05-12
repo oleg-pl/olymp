@@ -26,7 +26,7 @@ const isSignUp = ref(true); // Ставить статус для цієї ст�
     </div>
     </div>
   </div>
-  <div class="w-1/2 shadow-2xl">
+  <div class="w-1/2 shadow-2xl size_img">
         <img class="object-cover w-full h-screen hidden md:block" src="public/login_menu.jpg" alt="Background" />
     </div>
     </div>
@@ -37,4 +37,9 @@ const isSignUp = ref(true); // Ставить статус для цієї ст�
   
  
   
-  <style scoped></style>
+  <style scoped>
+  .size_img{
+    height: 100%;
+    margin-top: 30px;
+  }
+</style>
