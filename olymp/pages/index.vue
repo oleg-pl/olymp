@@ -1,5 +1,4 @@
 <script setup>
-  const {data} = useFetch('/api/subjects') /*Отримав дані з промісу (таблиці subjects)*/
   const user = useSupabaseUser();
   const role = useFetch('/api/users/'+ user.value.id)
 
@@ -9,151 +8,18 @@
     <article>
     <div class="container">
   
-    <div class="nav row">
-      
+    <div class="nav row"> 
       <h1 class="main_h1">Головна сторінка</h1>
      <UserLogo :role="role.data"/>
     </div>
-    <div class="aside_1">
-    <div class="column">
-      <div id="glob-2"></div>
-      <div class="row">
-        <div class="widget secondary split home-item">
-            <div class="predmet">
-                
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-          </svg>
-          <h5>Усі предмети</h5>
-         </div>
-
-          <div class="subjects">
-          <h5 v-for="subject in data">{{subject.name}}</h5>
-        </div>
-
-
-
-
-
-
-
-        </div>
-        <div class="widget secondary split home-item">
-            <div class="predmet">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376V479.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z" />
-          </svg>
-          <h5>Список вчителів</h5>
-         </div>
-
-          <div class="teachers">
-            <table contenteditable="">
-    <caption>Вчителі</caption>
-    <thead>
-        <tr>
-            <th>№</th>
-            <th>Ім'я та прізвище</th>
-
-            <th>Предмет</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Семен Ступка</td>
-
-            <td>Укр. Література</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Василь Заливаха</td>
-
-            <td>Укр. Мова</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Степан Дрон</td>
-
-            <td>ФІзика</td>
-        </tr>
-    </tbody>
-</table>
-        </div>
-        </div>
-      </div>
-
-    </div>
-
+   <StudentMain v-if="role.data.value == 1 || role.data.value == 2"/>
+   <TeacherMain v-if="role.data == 3"/>
 
 
 
       <h2 class="main_h2">Інформація про заклад</h2>
-      <div class="row">
-        <div class="widget secondary split home-item">
-            <div class="predmet">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M160 80c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V80zM0 272c0-26.5 21.5-48 48-48H80c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V272zM368 96h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H368c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z" />
-          </svg>
-          <h5>Класи</h5>
-         </div>
+      
 
-          <div class="subjects">
-          <h5>Математика</h5>
-          <h5>Математика</h5>
-          <h5>Математика</h5>
-          <h5>Математика</h5>
-        </div>
-
-        </div>
-        <div class="widget secondary split home-item">
-            <div class="predmet">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-          </svg>
-          <h5>Кількість учнів</h5>
-         </div>
-
-          <div class="teachers">
-            <table contenteditable="">
-    <caption>Вчителі</caption>
-    <thead>
-        <tr>
-            <th>№</th>
-            <th>Ім'я та прізвище</th>
-
-            <th>Предмет</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Семен Ступка</td>
-
-            <td>Укр. Література</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Василь Заливаха</td>
-
-            <td>Укр. Мова</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Степан Дрон</td>
-
-            <td>ФІзика</td>
-        </tr>
-    </tbody>
-</table>
-        </div>
-        </div>
-      </div>
-    </div>
-
-  
 </div>
 </article>
 </template>
