@@ -2,8 +2,9 @@ import { serverSupabaseClient } from '#supabase/server'
 
 export default eventHandler(async (event) => {
     const client = await serverSupabaseClient(event)
-    const body = await readBody(event)
-    const { error } = await client
+    const { data, error } = await client
         .from('users')
-        .insert(body)
+        .select('role')
+        .eq('user_id', event.context.params.id)
+    return data[0].role;
 })
