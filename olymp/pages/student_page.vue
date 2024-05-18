@@ -7,17 +7,14 @@
     
     <article>
     <div class="container">
-  
+      
     <div class="nav row"> 
-      <h1 class="main_h1">Головна сторінка</h1>
-     <UserLogo :role="role.data"/>
+  
     </div>
-   <StudentMain v-if="role.data.value == 1 || role.data.value == 2"/>
+    
+    <StudentPanel v-if="role.data.value == 1 || role.data.value == 2"/>
    <TeacherMain v-if="role.data == 3"/>
 
-
-
-      <h2 class="main_h2">Інформація про заклад</h2>
       
 
 </div>
@@ -51,6 +48,8 @@
 }
 .main_h1{
     font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .main_h2{
     font-size: 40px;
@@ -180,7 +179,7 @@ html {
                 
                 table tr {
                 
-
+ee: var(--rowsBorderColor) var(--rowsBorderWidth)
 
 
                 }
@@ -229,7 +228,9 @@ screen {
   flex-direction: column;
   gap: 2rem;
 }
-
+.tg_but{
+  padding: 10px;
+}
 svg {
   fill: var(--text_dark);
   height: 1lh;
@@ -562,7 +563,12 @@ button:hover {
   word-wrap: no-wrap;
 }
 
-
+.menu-btn {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
 .aside{
   display: flex;
 }
@@ -580,39 +586,20 @@ button:hover {
     display: flex;
     flex-direction: column;
   }
-  .menu {
-  float: right;
-  margin-top: 20px;
-  color: white;
-  background-color: black;
-}
-.menu__list {
-  overflow: hidden;
-  padding-left: 0;
-  margin: 0;
-  list-style: none;
-}
-.menu__item {
-  float: left;
-  text-align: center;
-  text-align: center;
-}
-.menu__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  text-decoration: none;
+  h5{
+    font-size: 20px;
+  }
 
-  height: 10vh;
-
-  word-wrap: no-wrap;
-  transition: all 0.3s ease;
 }
-.menu__link:hover, .menu__link:focus {
-  background: #09f;
-  color: #fff;
-}
+@media (max-width: 700px) {
+ 
+ .row{
+   display: flex;
+   flex-direction: column;
+ }
+ h5{
+   font-size: 17px;
+ }
 
 }
 /*  Menu
@@ -632,14 +619,12 @@ button:hover {
   text-align: center;
 }
 .menu__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  display: block;
+  color: #fff;
   text-decoration: none;
-
+  line-height: 5em;
   height: 5em;
-
+  padding: 0 1.5em;
   word-wrap: no-wrap;
   transition: all 0.3s ease;
 }

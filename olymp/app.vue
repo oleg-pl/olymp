@@ -29,12 +29,12 @@ async function signOut() { /* Це функція виходу з авториз
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__item">
-                            <a href="#" class="menu__link">Головна</a>
+                          <a href="/" class="menu__link">Головна</a>
                         </li><li class="menu__item">
                             <a href="#" class="menu__link">Інформація</a>
                         </li>
                         <li class="menu__item">
-                            <NuxtLink href="/student.vue" class="menu__link">Панель управління УЧНЯ</NuxtLink>
+                          <a href="/student_page" class="menu__link">Панель управління</a>
                         </li>
                         
                     </ul>
@@ -70,10 +70,15 @@ async function signOut() { /* Це функція виходу з авториз
     display: flex;
     flex-direction: column;
   }
-
-  .menu{
-   display: none;
+  .menu__link{
+    color: block;
+    display: flex
   }
+  a{
+    display: block;
+    color: black;
+  }
+
 }
 
 
