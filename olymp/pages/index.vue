@@ -1,7 +1,6 @@
 <script setup>
   const user = useSupabaseUser();
   const role = useFetch('/api/users/'+ user.value.id)
-
 </script>
 <template>
     
@@ -10,10 +9,10 @@
   
     <div class="nav row"> 
       <h1 class="main_h1">Головна сторінка</h1>
-     <UserLogo :role="role.data"/>
+     <UserLogo :role="role.data.value"/>
     </div>
-   <StudentMain v-if="role.data.value == 1 || role.data.value == 2"/>
-   <TeacherMain v-if="role.data == 3"/>
+   <StudentMain v-if="role.data.value== 1 || role.data.value == 2"/>
+   <TeacherMain v-if="role.data.value == 3"/>
 
 
 
