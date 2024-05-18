@@ -21,20 +21,22 @@ async function signOut() { /* Це функція виходу з авториз
             <div class="wrap">
                
                 <header class="logo">
+                  <NuxtLink to = "/">
                     <h1 class="logo__title">
                      <img class="logo" src="public/logo2.png" alt="">
                     </h1>
+                  </NuxtLink>
                 </header>
                 <button class="singout" @click="signOut">Sign Out</button>
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__item">
-                          <a href="/" class="menu__link">Головна</a>
+                          <NuxtLink to="/" class="menu__link">Головна</Nuxtlink>
                         </li><li class="menu__item">
-                            <a href="#" class="menu__link">Інформація</a>
+                          <NuxtLink to="/" class="menu__link">Інформація</Nuxtlink>
                         </li>
                         <li class="menu__item">
-                          <a href="/student_page" class="menu__link">Панель управління</a>
+                          <NuxtLink to="/pannel" class="menu__link">Панель управління</Nuxtlink>
                         </li>
                         
                     </ul>
