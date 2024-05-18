@@ -1,7 +1,7 @@
 <script setup>
 const user = useSupabaseUser();
-const student_id =  useFetch('/api/students/'+ user.value.id)
-const {data} = useFetch('/api/subjects/'+ student_id.data.value)
+const student_id =  await useFetch('/api/students/'+ user.value.id)
+const {data} = await useFetch('/api/subjects/'+ student_id.data.value)
 console.log(data)/*Отримав дані з промісу (таблиці subjects)*/
 </script>
 <template>

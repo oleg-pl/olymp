@@ -1,6 +1,6 @@
 <script setup>
   const user = useSupabaseUser();
-  const role = useFetch('/api/users/'+ user.value.id)
+  const role = await useFetch('/api/users/'+ user.value.id)
 </script>
 <template>
     
