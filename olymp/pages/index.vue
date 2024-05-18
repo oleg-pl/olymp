@@ -11,7 +11,7 @@
       <h1 class="main_h1">Головна сторінка</h1>
      <UserLogo :role="role.data.value"/>
     </div>
-   <StudentMain v-if="role.data.value== 1 || role.data.value == 2"/>
+   <StudentMain v-if="role.data.value== 1"/>
    <TeacherMain v-if="role.data.value == 3"/>
 
 

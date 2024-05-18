@@ -1,5 +1,4 @@
 <script setup>
-const {data} = useFetch('/api/subjects') /*Отримав дані з промісу (таблиці subjects)*/
 </script>
 <template>
   <h1 class="main_h1">ПАНЕЛЬ УПРАВЛІННЯ СТУДЕНТА</h1>

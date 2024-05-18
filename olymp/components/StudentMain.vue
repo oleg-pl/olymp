@@ -1,5 +1,8 @@
 <script setup>
-const {data} = useFetch('/api/subjects') /*Отримав дані з промісу (таблиці subjects)*/
+const user = useSupabaseUser();
+const student_id =  useFetch('/api/students/'+ user.value.id)
+const {data} = useFetch('/api/subjects/'+ student_id.data.value)
+console.log(data)/*Отримав дані з промісу (таблиці subjects)*/
 </script>
 <template>
      <div class="aside_1">
