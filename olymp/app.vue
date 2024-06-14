@@ -31,14 +31,14 @@ async function signOut() { /* Це функція виходу з авториз
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__item">
-                          <NuxtLink to="/" class="menu__link">Головна</Nuxtlink>
+                          <NuxtLink to="/student" class="menu__link">Головна</Nuxtlink>
                         </li><li class="menu__item">
                           <NuxtLink to="/" class="menu__link">Інформація</Nuxtlink>
                         </li>
                         <li class="menu__item">
                           <NuxtLink to="/pannel" class="menu__link">Панель управління</Nuxtlink>
                         </li>
-                        
+                       
                     </ul>
                 </nav>
             </div>

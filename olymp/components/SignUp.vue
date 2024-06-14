@@ -39,7 +39,7 @@ const supabase = useSupabaseClient()
     })
     
     }
-        router.push('/') // Після реєстрації закидує на наступну сторінку
+        router.push('/student') // Після реєстрації закидує на наступну сторінку
     }
       } catch (error) {
         alert(error.error_description || error.message);

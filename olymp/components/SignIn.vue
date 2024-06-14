@@ -13,7 +13,7 @@ const handleSignin = async () => {
     {
         throw error;
     }  else {
-        router.push('/') // Якщо дані співпали то юзера перекине на наступну сторінку
+        router.push('/student') // Якщо дані співпали то юзера перекине на наступну сторінку
     }
        
   } catch (error) {

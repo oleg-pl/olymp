@@ -10,10 +10,10 @@
          </div>
 
           <div class="subjects">
-          <h5>Математика</h5>
-          <h5>Математика</h5>
-          <h5>Математика</h5>
-          <h5>Математика</h5>
+          <h5>8</h5>
+          <h5>9</h5>
+          <h5>10</h5>
+          <h5>11</h5>
         </div>
 
         </div>
@@ -28,33 +28,33 @@
 
           <div class="teachers">
             <table contenteditable="">
-    <caption>Вчителі</caption>
+    <caption>Учні</caption>
     <thead>
         <tr>
             <th>№</th>
             <th>Ім'я та прізвище</th>
 
-            <th>Предмет</th>
+            <th>Клас</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>1</td>
-            <td>Семен Ступка</td>
+            <td>Андрій Ромб</td>
 
-            <td>Укр. Література</td>
+            <td>9</td>
         </tr>
         <tr>
             <td>2</td>
-            <td>Василь Заливаха</td>
+            <td>Петро Калнишевський</td>
 
-            <td>Укр. Мова</td>
+            <td>10</td>
         </tr>
         <tr>
             <td>3</td>
-            <td>Степан Дрон</td>
+            <td>Ігор Лікаренко</td>
 
-            <td>ФІзика</td>
+            <td>11</td>
         </tr>
     </tbody>
 </table>
